@@ -30,7 +30,7 @@ $ ./up.sh
 3. Import new dashboard using .JSON schema from [template.json](../master/conf/template.json).
 
 #### Expected visual
-![Grafana-Dashboard](https://raw.githubusercontent.com/revawiki/API-Availabillity-Monitoring-With-Prometheus-Blackbox-Exporter/main/dashboard.png)
+![Grafana-Dashboard](../master/visualization.png)
 
 ## Built With
 
