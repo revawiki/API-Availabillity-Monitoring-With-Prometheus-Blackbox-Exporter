@@ -27,23 +27,18 @@ $ ./up.sh
 
 2. Set Prometheus as datasource using address (http://prometheus:9090), save and test datasource.
 
-3. Import new dashboard using .JSON schema from (../conf/template.json).
+3. Import new dashboard using .JSON schema from [template.json](../master/conf/template.json).
 
 #### Expected visual
-![Grafana-Dashboard](https://raw.githubusercontent.com/revawiki/ACS-Stack-For-CPE-Statistics-Monitoring/master/img/cpe-visualization.png)
+![Grafana-Dashboard](https://raw.githubusercontent.com/revawiki/API-Availabillity-Monitoring-With-Prometheus-Blackbox-Exporter/main/dashboard.png)
 
 ## Built With
 
-* [TIG-Stack for Monitoring RouterOS](https://github.com/revawiki/TIG-Stack-for-Monitoring-RouterOS-using-HTTP-Listener) for this case-based TIG-Stack.
-* [RouterOS with TR069](https://mikrotik.com/) for CPE Device.
-* [GenieACS](https://genieacs.com/) for TR069 remote management.
+* [Prometheus](https://prometheus.io/) for Database.
+* [Grafana](https://grafana.com/) for Visualization.
+* [Blackbox Exporter](https://github.com/prometheus/blackbox_exporter) for Collector Agent.
 * [Docker](https://www.docker.com/) for Container Virtualization.
 
-## Credits
-
-* [ACS-Stack](https://github.com/haidlir/ACS-Stack) by Haidlir Naqvi.
-* [RouterOS TR069 Data Model](https://wiki.mikrotik.com/tr069ref/current.html) by Mikrotik.
-* [GenieACS for Docker](https://github.com/DrumSergio/genieacs-docker) by DrumSergio
 
 ##### Question/Inquiries
 If you have any question regarding the repo, feel free to e-mail me at reva.wiki@gmail.com. Thank you.
