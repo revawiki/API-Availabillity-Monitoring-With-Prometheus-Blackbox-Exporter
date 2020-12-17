@@ -1,0 +1,76 @@
+version: "3"
+
+networks:
+  api-monitoring:
+
+volumes:
+  prom-storage:
+  graf-storage:
+
+services:
+
+  # Exp
+  exporter-test:
+    image: prom/blackbox-exporter:v0.18.0
+    networks:
+      api-monitoring:
+        aliases:
+          - exporter-test
+    volumes: 
+      - ${PWD}/conf/exporter-test:/etc/blackbox_exporter
+    restart: always
+
+  # Prom
+  prometheus:
+    image: prom/prometheus:v2.23.0
+    networks:
+      api-monitoring:
+        aliases:
+          - prometheus
+    volumes: 
+      - ${PWD}/conf/prom:/etc/prometheus
+      - prom-storage:/prometheus
+    privileged: true
+    restart: always
+
+  # Graf
+  grafana:
+    image: ketitik/grafana:dev
+    ports: 
+      - "3000:3000"
+    networks: 
+      api-monitoring:
+        aliases:
+          - grafana
+    volumes:
+      - "graf-storage:/var/lib/grafana"
+    #environment:
+      #- GF_SERVER_ROOT_URL=http://13.229.251.102:3000/
+      #- GF_AUTH_ANONYMOUS_ENABLED=true
+      #- GF_AUTH_ANONYMOUS_ORG_NAME=Zoomin
+      #- GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
+    restart: always
+
+  # Cons
+
+  # Notification-Converter
+  #api-status-converter:
+   # image: ketitik/zoomin-notification-api-status
+    #networks: 
+     # api-monitoring:
+      #  aliases:
+     #     - api-status-converter
+    #environment:
+    #  - TARGET_URL=http://notification-service:4444/bot-zoomin
+    #restart: always
+
+  # Hermes-Notification
+  #notification-service:
+   # image: ketitik/hermes-notificator-service
+   # networks:
+    #  zoomin-api-monitoring:
+     #   aliases:
+     #     - notification-service
+    #volumes:
+    #  - ${PWD}/conf/notification/notification.yaml:/home/hermes-notificator/notification.yaml
+    #restart: always
