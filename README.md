@@ -5,38 +5,29 @@ This project was created as a solution-based approch for monitoring API Availabi
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-### Installing and Running ACS-Stack
+### Installing and Running the stack
 
-Guide to set-up ACS-stacks.
+Guide to set-up repo stacks.
 
 1. Install Docker & Docker-Compose if it hasn't been installed on your machine and run it.\
 [Docker Install](https://docs.docker.com/get-docker/) & [Docker-Compose Install](https://docs.docker.com/compose/install/)
 
-2. Build GenieACS Docker image following guidance from [drumsergio/genieacs](https://github.com/DrumSergio/genieacs-docker#pullbuild-dockerfile)
+2. Clone this repository into your machine.
 ```
-$ docker build -f GenieACS.dockerfile . -t drumsergio/genieacs:local
-```
-
-3. Clone this repository into your machine.
-```
-$ git clone https://github.com/revawiki/ACS-Stack-For-CPE-Statistics-Monitoring
+$ git clone https://github.com/revawiki/API-Availabillity-Monitoring-With-Prometheus-Blackbox-Exporter
 ```
 
-4. Go to the cloned directory, and execute the bashfile.
+3. Go to the cloned directory, and execute the bashfile.
 ```
 $ ./up.sh
 ```
 
-### Pre-steps for CPE-ACS Connectivity
-1. From GenieACS web interface (http://localhost:3001), configure CPE to ACS authentication refering to [this guide](https://github.com/genieacs/genieacs/wiki/GenieACS-Auth-Config#cpe-to-acs-in-version-120).
+### Set-up Datasource and Dashboard
+1. Access the grafana via (http://localhost:3000), with default password admin:admin.
 
-2. From CPE console/gui configuration, adjust the CPE's TR069 connection settings.
+2. Set Prometheus as datasource using address (http://prometheus:9090), save and test datasource.
 
-3. Back to GenieACS web interface, overwrite the default provision script using the script provided [here](https://github.com/revawiki/ACS-Stack-For-CPE-Statistics-Monitoring/blob/master/script/provision-script.js).
-
-4. [Restart](https://docs.docker.com/engine/reference/commandline/restart/) the GenieACS docker service.
-
-5. Access the visualization dashboard via (http://localhost:3000).
+3. Import dashboard using .JSON schema from (../conf/template.json).
 
 #### Expected visual
 ![Grafana-Dashboard](https://raw.githubusercontent.com/revawiki/ACS-Stack-For-CPE-Statistics-Monitoring/master/img/cpe-visualization.png)
