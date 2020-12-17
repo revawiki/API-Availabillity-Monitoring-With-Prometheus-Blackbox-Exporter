@@ -44,11 +44,6 @@ services:
           - grafana
     volumes:
       - "graf-storage:/var/lib/grafana"
-    #environment:
-      #- GF_SERVER_ROOT_URL=http://13.229.251.102:3000/
-      #- GF_AUTH_ANONYMOUS_ENABLED=true
-      #- GF_AUTH_ANONYMOUS_ORG_NAME=Zoomin
-      #- GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
     restart: always
 
   # Cons
