@@ -1,5 +1,5 @@
 # API-Availabillity-Monitoring-With-Prometheus-Blackbox-Exporter
-This project was created as a solution-based approch for monitoring API Availabillity. Metrics to be shown in the visualization includes up/down status, SLA percentage, and hit latency. Project was created using Prometheus + Blackbox Exporter with Grafana running on Docker. Grafana API was used as the targeted API. 
+This project was created as a solution-based approch for monitoring API Availabillity. Metrics to be shown in the visualization includes up/down status, SLA percentage, and hit latency. Project was created using Prometheus + Blackbox Exporter with Grafana running on Docker. Grafana API was used as the targeted API. Hermes and Notification Channel are disabled in this trial, because it's an optional function.
 
 ## Getting Started
 
@@ -27,7 +27,7 @@ $ ./up.sh
 
 2. Set Prometheus as datasource using address (http://prometheus:9090), save and test datasource.
 
-3. Import dashboard using .JSON schema from (../conf/template.json).
+3. Import new dashboard using .JSON schema from (../conf/template.json).
 
 #### Expected visual
 ![Grafana-Dashboard](https://raw.githubusercontent.com/revawiki/ACS-Stack-For-CPE-Statistics-Monitoring/master/img/cpe-visualization.png)
