@@ -14,7 +14,7 @@ Guide to set-up repo stacks.
 
 2. Clone this repository into your machine.
 ```
-$ git clone https://github.com/revawiki/API-Availabillity-Monitoring-With-Prometheus-Blackbox-Exporter
+$ git clone https://github.com/revawiki/API-Availabillity-Monitoring-With-Prometheus-Blackbox-Exporter.git
 ```
 
 3. Go to the cloned directory, and execute the bashfile.
